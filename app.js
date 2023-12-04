@@ -52,9 +52,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/search', async (req, res) => {
-//   const searchTerm = req.body.searchTerm;
-//   const apiKey = 'dab32b4a';
-  const omdbApiUrl = `http://www.omdbapi.com/?i=tt3896198&apikey=dab32b4a`;
+  const searchTerm = req.body.searchTerm;
+  const apiKey = '37607d8e';
+  const omdbApiUrl = http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm)};
 
   try {
     const response = await axios.get(omdbApiUrl);
