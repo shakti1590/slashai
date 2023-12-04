@@ -1,0 +1,29 @@
+<!-- search.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results</title>
+</head>
+<body>
+  <h1>Search Results</h1>
+  <ul>
+    <% movies.forEach((movie) => { %>
+      <li>
+        <img src="<%= movie.Poster %>" alt="<%= movie.Title %>">
+        <p><strong>Title:</strong> <%= movie.Title %></p>
+        <p><strong>Year:</strong> <%= movie.Year %></p>
+        <p><strong>Type:</strong> <%= movie.Type %></p>
+        <form action="/favorite" method="post">
+          <input type="hidden" name="title" value="<%= movie.Title %>">
+          <input type="hidden" name="year" value="<%= movie.Year %>">
+          <input type="hidden" name="type" value="<%= movie.Type %>">
+          <input type="hidden" name="poster" value="<%= movie.Poster %>">
+          <button type="submit">Favorite</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

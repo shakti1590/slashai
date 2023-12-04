@@ -1,0 +1,22 @@
+<!-- favorites.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorites</title>
+</head>
+<body>
+  <h1>Favorite Movies</h1>
+  <ul>
+    <% favorites.forEach((favorite) => { %>
+      <li>
+        <img src="<%= favorite.poster %>" alt="<%= favorite.title %>">
+        <p><strong>Title:</strong> <%= favorite.title %></p>
+        <p><strong>Year:</strong> <%= favorite.year %></p>
+        <p><strong>Type:</strong> <%= favorite.type %></p>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
